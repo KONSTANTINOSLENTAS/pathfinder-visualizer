@@ -1,16 +1,38 @@
-# React + Vite
+# Pathfinding Algorithm Visualizer 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic, interactive tool to visualize and compare Dijkstra's and A\* (A-Star) shortest path algorithms.
 
-Currently, two official plugins are available:
+ **[Click Here to See the Visualizer in Action!](https://KONSTANTINOSLENTAS.github.io/pathfinder-visualizer)**
+**Interactive Grid:** Draw walls and place start/end nodes to create custom mazes.
+ **Speed Control:** Adjust the visualization speed to observe the search process step-by-step.
+ **Immediate Results:** Displays the shortest path found and the number of nodes visited.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ ### Built With
 
-## React Compiler
+* **React** (Core JavaScript Library)
+* **Vite** (Build Tool)
+* **JavaScript (ES6+)**
+* **CSS / HTML**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+### Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To get a local copy, follow these simple steps.
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/KONSTANTINOSLENTAS/pathfinder-visualizer.git](https://github.com/KONSTANTINOSLENTAS/pathfinder-visualizer.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd pathfinder-visualizer
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Run the local development server:**
+    ```bash
+    npm run dev
+    ```
+    The application should now be accessible at `http://localhost:5173` (or similar port).
