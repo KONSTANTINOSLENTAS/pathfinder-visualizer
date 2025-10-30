@@ -1,10 +1,11 @@
 
 
+
 export function astar(grid, startNode, finishNode) {
   const visitedNodesInOrder = [];
   const unvisitedNodes = getAllNodes(grid); // 1. Get all nodes (resets them)
 
-  e
+
   startNode.distance = 0;
   startNode.gScore = 0;
   startNode.hScore = calculateHeuristic(startNode, finishNode); // Correctly calculate hScore
@@ -15,7 +16,7 @@ export function astar(grid, startNode, finishNode) {
     const closestNode = unvisitedNodes.shift();
 
     if (closestNode.isWall) continue;
-   
+    
     if (closestNode.fScore === Infinity) return visitedNodesInOrder;
 
     closestNode.isVisited = true;
@@ -51,12 +52,12 @@ function updateUnvisitedNeighborsAStar(node, grid, finishNode) {
   }
 }
 
-// 
+
 function sortNodesByFScore(unvisitedNodes) {
   unvisitedNodes.sort((nodeA, nodeB) => nodeA.fScore - nodeB.fScore);
 }
 
-// 
+
 
 function getUnvisitedNeighbors(node, grid) {
   const neighbors = [];
