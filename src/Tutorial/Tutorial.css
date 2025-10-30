@@ -1,0 +1,101 @@
+/* --- Overlay --- */
+.tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+.tutorial-modal {
+  width: 95%;
+  height: 90%;
+  max-width: 1200px;
+  background-color: #242424;
+  padding: 30px 40px;
+  border-radius: 12px;
+  outline: none;
+  z-index: 1001;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Title & Text --- */
+.tutorial-modal h2 {
+  color: #4caf50;
+  font-size: 2rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.tutorial-modal p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* --- Video Container --- */
+.tutorial-video-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 6px;
+}
+
+.tutorial-video-container video {
+  width: 98%;
+  height: 98%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* --- Navigation Buttons --- */
+.tutorial-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.tutorial-navigation button {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tutorial-navigation button:hover:not(:disabled) {
+  background-color: #777;
+}
+
+.tutorial-navigation button:disabled {
+  background-color: #333;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tutorial-navigation button.finish-button {
+  background-color: #4caf50;
+}
+
+.tutorial-navigation button.finish-button:hover {
+  background-color: #45a049;
+}
