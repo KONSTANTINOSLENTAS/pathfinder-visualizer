@@ -11,6 +11,9 @@ const Node = (props) => {
     onMouseDown,
     onMouseEnter,
     onMouseUp,
+    onTouchStart,
+    onTouchMove,
+    onTouchEnd,
   } = props;
 
   
@@ -38,6 +41,9 @@ const Node = (props) => {
       onMouseEnter={handleMouseEnter}
       onMouseUp={onMouseUp}
       onDragStart={e => e.preventDefault()} 
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     ></div>
   );
 };

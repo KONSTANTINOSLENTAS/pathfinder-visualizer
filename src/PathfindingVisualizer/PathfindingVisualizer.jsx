@@ -370,29 +370,57 @@ export default function PathfindingVisualizer() {
       </nav>
 
       <div className="grid">
-        {grid.map((row, rowIndex) => {
-          return (
-            <div key={rowIndex} className="grid-row">
-              {row.map((node, nodeIndex) => {
-                const { row, col, isStart, isFinish, isWall } = node;
-                return (
-                  <Node
-                    key={nodeIndex}
-                    col={col}
-                    row={row}
-                    isStart={isStart}
-                    isFinish={isFinish}
-                    isWall={isWall}
-                    onMouseDown={handleMouseDown}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseUp={handleMouseUp}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
+        {grid.map((row, rowIndex) => {
+          return (
+            <div key={rowIndex} className="grid-row">
+              {row.map((node, nodeIndex) => {
+                const { row, col, isStart, isFinish, isWall } = node;
+                return (
+                  <Node
+                    key={nodeIndex}
+                    col={col}
+                    row={row}
+                    isStart={isStart}
+                    isFinish={isFinish}
+                    isWall={isWall}
+                    
+                    // --- MOUSE EVENTS (Existing) ---
+                    onMouseDown={handleMouseDown}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseUp={handleMouseUp}
+
+                    // --- TOUCH EVENTS (NEW) ---
+                    onTouchStart={(e) => {
+                      // Start moving/drawing
+                      e.preventDefault();
+                      handleMouseDown(row, col);
+                    }}
+                    onTouchMove={(e) => {
+                      // Simulate mouse enter by checking element under touch
+                      e.preventDefault();
+                      
+                      // Get the current touch coordinates
+                      const touch = e.touches[0];
+                      
+                      // Find the DOM element at those coordinates
+                      const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+                      // Check if the element is one of your nodes and call handleMouseEnter
+                      if (element && element.id.startsWith('node-')) {
+                        const parts = element.id.split('-');
+                        const r = parseInt(parts[1]); // Node Row
+                        const c = parseInt(parts[2]); // Node Col
+                        handleMouseEnter(r, c);
+                      }
+                    }}
+                    onTouchEnd={handleMouseUp} // Stop moving/drawing
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
